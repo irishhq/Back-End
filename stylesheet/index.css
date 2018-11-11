@@ -1,0 +1,140 @@
+/* @group general styles 主体,reset,链接,标题,其他元素*/
+/* reset */
+*, html, body{
+    margin: 0;
+    padding: 0;
+}
+div, span, p, li, a{
+    font-family: Times New Roman;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #333333;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+/* @group helper styles 表单,通知和错误,一致性的条目*/
+/* 
+--color--
+blue, hover_color, main_color, title_color: #0c7ed9;
+dark_gray, font_color:                      #333;
+light_gray:                                 #818181;
+*/
+.arrow-down::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: #818181;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    margin-top: -3px;
+}
+
+/* @group page structure 标题,页脚,导航,布局,其他页面结构*/
+.container{
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+/* @group page structure header */
+header .logo{
+    width: 100%;
+    background: #0c7ed9;
+    height: 120px;
+}
+/* 导航 */
+/* 导航主体样式 */
+nav.main-nav>ul{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 48px;
+}
+nav.main-nav>ul>li{
+    min-width: 115px;
+    position: relative;
+}
+/* 导航栏下a标签共有样式 */
+nav.main-nav a{
+    display: block;
+    padding: 0.75em 1em;
+    position: relative;
+}
+
+/* 导航栏子级子菜单共有样式 */
+nav.main-nav>ul>li ul{
+    position: absolute;
+    width: 12em;
+    background: #f3f3f3;
+    box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+    line-height: 1.8;
+    /* 子级菜单显示与隐藏 */
+    display: none;
+}
+nav.main-nav ul.fir-menu a,
+nav.main-nav ul.sf-menu a{
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #d7d7d7;
+}
+
+/* 导航栏二级菜单 定位 */
+nav.main-nav ul.sf-menu{
+    left: 12em;
+    margin-top: -44.5px;
+}
+/* @group page structure carousel */
+.carousel {
+    position: relative;/* 铺垫动画效果 */
+    height: 300px;
+    overflow: hidden;
+}
+.carousel .carousel-inner{
+    width: 100%;
+    height: 100%;
+}
+.carousel .carousel-item,
+.carousel .carousel-item a,
+.carousel .carousel-item img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.carousel-indicators{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    height: 20px;
+}
+.carousel-indicators li{
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    background: -24px -126px url("../img/carousel/ico.png") no-repeat;
+    cursor: pointer;
+}
+.carousel-indicators li.active{
+    background-position: -10px -126px;
+}
+/* @group page structure article */
+.content-wrap .content-module{
+    width: 465px;
+    height: auto;
+
+}
+/* @group page structure footer */
+
+/* end header */
+
+/* @group page components 各个页面 */
+/* @group overrides 覆盖样式 */
