@@ -1,22 +1,3 @@
-/* @group general styles 主体,reset,链接,标题,其他元素*/
-/* reset */
-*, html, body{
-    margin: 0;
-    padding: 0;
-}
-div, span, p, li, a{
-    font-family: Times New Roman;
-    font-size: 13px;
-    line-height: 1.8;
-    color: #333333;
-}
-ul{
-    list-style: none;
-}
-a{
-    text-decoration: none;
-    cursor: pointer;
-}
 /* @group helper styles 表单,通知和错误,一致性的条目*/
 /* 
 --color--
@@ -36,59 +17,6 @@ light_gray:                                 #818181;
     margin-top: -3px;
 }
 
-/* @group page structure 标题,页脚,导航,布局,其他页面结构*/
-.container{
-    width: 1200px;
-    margin-right: auto;
-    margin-left: auto;
-}
-/* @group page structure header */
-header .logo{
-    width: 100%;
-    background: #0c7ed9;
-    height: 120px;
-}
-/* 导航 */
-/* 导航主体样式 */
-nav.main-nav>ul{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 48px;
-}
-nav.main-nav>ul>li{
-    min-width: 115px;
-    position: relative;
-}
-/* 导航栏下a标签共有样式 */
-nav.main-nav a{
-    display: block;
-    padding: 0.75em 1em;
-    position: relative;
-}
-
-/* 导航栏子级子菜单共有样式 */
-nav.main-nav>ul>li ul{
-    position: absolute;
-    width: 12em;
-    background: #f3f3f3;
-    box-shadow: 2px 2px 6px rgba(0,0,0,.2);
-    line-height: 1.8;
-    /* 子级菜单显示与隐藏 */
-    display: none;
-}
-nav.main-nav ul.fir-menu a,
-nav.main-nav ul.sf-menu a{
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: #d7d7d7;
-}
-
-/* 导航栏二级菜单 定位 */
-nav.main-nav ul.sf-menu{
-    left: 12em;
-    margin-top: -44.5px;
-}
 /* @group page structure carousel */
 .carousel {
     position: relative;/* 铺垫动画效果 */
@@ -126,15 +54,86 @@ nav.main-nav ul.sf-menu{
 .carousel-indicators li.active{
     background-position: -10px -126px;
 }
-/* @group page structure article */
+/* @group page structure main section module */
+/* moudule title */
+.content-wrap>div{
+    /* 去掉直接子元素中,由于inline-block而产生的间隙 */
+    font-size: 0;
+}
 .content-wrap .content-module{
     width: 465px;
     height: auto;
-
+    margin-top: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
 }
-/* @group page structure footer */
+.content-module>.module-top,
+aside>.module-top
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border-bottom: 2px solid #0c7ed9;
+}
+.content-module>.module-top>h3,
+aside>.module-top>h3{
+    display: inline-block;
+    flex: 1;
+    padding-left: 5px;
+    color: #0c7ed9;
+    font-size: 20px;
+    font-weight: bold;
+}
+.content-module>.module-top>.more{
+    display: inline-block;
+    width: 100px; 
+    color: #333;
+}
+/* moudule list */
+.content-module .module-list{
+    padding: 5px;
+}
+.content-module .module-list>li{
+    height: 30px;
+    vertical-align: center;
+    border-bottom: 1px dashed #7e7e7e;
+    line-height: 30px;
+}
 
-/* end header */
+.content-module .module-list>li span{
+    float: right;
+    font-size: 12px;
+    color: #666;
+    height: 100%;
+    line-height: inherit;
+    padding-right: 2px;
+}
+/* aside */
+aside{
+    width: 250px;
+    display: inline-block;
+    margin-top: 10px;
+}
+aside .qk-entry-list>li{
+    padding: 5px 10px;
+    border-bottom: 1px solid rgb(38, 161, 240);
+}
+aside .qk-entry-list .social-account>p:first-child{
+    float: left;
+}
+.social-account p>a:hover img{
+    opacity: 0.7;
+}
+aside .qk-entry-list>li:not(:first-child) p>span{
+    color: red;
+    font-size: 14px;
+}
+/* 成果展示 */
+.achievement>li>p{
+    margin: 10px;
+    line-height: 1;
+}
 
 /* @group page components 各个页面 */
 /* @group overrides 覆盖样式 */
